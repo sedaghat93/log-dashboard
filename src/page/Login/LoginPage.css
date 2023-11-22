@@ -1,0 +1,28 @@
+.bg-form{
+    height: 85vh !important;
+    margin: 10px 0;
+}
+.login-form {
+    width: 40%;
+    height: 20vm !important;
+    border: 1px solid #cccc;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translate(65%,50%);
+    z-index: 999;
+  }
+
+.input-form{
+    width: 50%;
+    border-bottom: 3px solid #cecece;
+    height: 60px;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+
+  

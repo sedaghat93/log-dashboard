@@ -1,0 +1,15 @@
+.home-content-latest-user{
+    direction: rtl;
+}
+
+.home-content-users-title{
+ margin-top: 5px;
+ padding: 20px;
+ font-size: 15px;
+ font-weight: bold;
+}
+
+.home-content-users-table{
+padding: 10px;
+    /* background-color: yellowgreen; */
+}
