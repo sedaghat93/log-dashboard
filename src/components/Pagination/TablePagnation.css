@@ -1,0 +1,29 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: ltr;
+  margin: 3rem 1rem;
+}
+
+.page-item {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  color: white;
+}
+
+.page-item:first-child {
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.page-item:last-child {
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.active {
+  background-color: #454b64;
+  color: #fff;
+border: 3px solid #454b64;
+}

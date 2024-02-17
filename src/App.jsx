@@ -1,42 +1,36 @@
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import HeaderShowError from "./components/HeaderShowError/HeaderShowError";
-import RechartError from "./components/RechartError/RechartError";
-import ShowErrror from "./components/ShowError/ShowErrror";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useContext, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import LoginPage from "./page/Login/LoginPage";
+import ListServer from "./page/ListServer/ListServer";
+import { AuthProvider } from "./context/authContext";
+import { Toaster } from "react-hot-toast";
+import LogSystem from "./page/LogSystem/LogSystem";
+import Layout from "./components/Layout/Layout";
 import Home from "./page/Home/Home";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ThemeContext } from "./context/themeContext";
+
+const queryClient = new QueryClient();
 
 function App() {
-
-  const [listOfErrors, setListOfErrors] = useState([]);
-
-
-  function getAllErrors() {
-    axios.get("http://localhost:3030/table-rows").then((res) => {
-      setListOfErrors(res.data);
-      // console.log(res.data);
-    });
-  }
-
-  useEffect(() => {
-    getAllErrors();
-  }, []);
-
-
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className="container m-auto ">
-      <Navbar listOfErrors={listOfErrors} />
-      <Routes>
-        <Route path="/" element={<Home listOfErrors={listOfErrors}/>}/>
-        <Route path="/login" element={<LoginPage/>} />
-      </Routes>
-      {/* <HeaderShowError listOfErrors={listOfErrors} />
-      <RechartError />
-      <ShowErrror listOfErrors={listOfErrors} readMore={readMoreHandler} setIsOpen={setIsOpen} isOpen={isOpen}/> */}
-      </div> 
+    <div className={`${theme}`}>
+      <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <Toaster position="top-center" reverseOrder={false} />
+        <Routes>
+          <Route element={<Layout />}>
+            <Route exact path="/" element={<Home />} />
+            <Route path="log" element={<LogSystem />} />
+            <Route path="servers" element={<ListServer />} />
+          </Route>
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </AuthProvider>
+    </QueryClientProvider>
+    </div>
   );
 }
 

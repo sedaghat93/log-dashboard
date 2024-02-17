@@ -1,6 +1,7 @@
 .home-content {
   border: 1px solid #fff;
   background-color: #fff;
-  /* overflow: auto; */
-  height: 100vh;
+  /* height: 100vh; */
 }
+
+/* overflow: auto; */

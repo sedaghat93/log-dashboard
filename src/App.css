@@ -1,19 +1,20 @@
-.App{
-    width: 100%;
-    max-width: 800px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #333;
-    box-shadow: 0px 0px 15px gray;
+.App {
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #333;
+  box-shadow: 0px 0px 15px gray;
 }
 
-.header, .footer{
-    width: 100%;
-    background-color: #66d8f5;
-}
+/* .header,
+.footer {
+  width: 100%;
+  background-color: #66d8f5;
+} */
 
 /* global styles & resets */
 *,
@@ -73,4 +74,40 @@ button {
   background-color: transparent;
   font-family: inherit;
   font-size: 1.8rem;
+}
+
+/* .App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+} */
+
+.light {
+  background-color: #dbeafe !important;
+  color: #1b1b1b !important;
+}
+
+.dark {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+button .dark {
+  background-color: #ccc;
+}
+table .dark{
+  background-color: #1b1b1b;
+}
+/* .selected {
+  background-color: greenyellow;
+} */
+
+@media (max-width: 640px) {
+  .layout-res {
+    grid-template-columns: 1fr;
+  }
+  
 }
