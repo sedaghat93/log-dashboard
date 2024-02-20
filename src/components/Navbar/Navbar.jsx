@@ -25,10 +25,10 @@ function Navbar() {
   console.log(isChecked);
 
   return (
-    <div className="w-full flex xl:justify-end rounded-xl md:mr-5 md:ml-10 p-10 bg-slate-100 dark:bg-[#374151]">
-      <div className="flex justify-between xl:justify-around xl:w-2/5 items-center">
+    <div className="w-full lg:max-w-full flex  lg:justify-end rounded-xl lg:mr-10 lg:ml-10 p-10 bg-slate-100 dark:bg-[#374151]">
+      <div className="w-full flex justify-between lg:justify-around lg:w-2/5 items-center">
         <div className="">
-          <label htmlFor="dark-toggle" class="flex items-center cursor-pointer">
+          <label htmlFor="dark-toggle" className="flex items-center cursor-pointer">
             <div className="relative">
               <input
                 type="checkbox"
@@ -39,7 +39,7 @@ function Navbar() {
                 onChange={handleCheckboxChange}
               />
 
-              <div className="flex justify-center items-center  border-2 border-[#444a63]  dark:border-white w-[66px] h-11 rounded-full"></div>
+              <div className="flex justify-center items-center border-2 border-[#444a63] dark:border-white w-[66px] h-11 rounded-full"></div>
               <div className="dot absolute left-7 top-0 p-1 w-9 h-8 rounded-full text-4xl text-[#444a63] dark:text-white -translate-x-1/3 transition-transform ease-in-out delay-200">
                 {isChecked ? (
                   <FaMoon className="dark:hover:text-[#60A5FA] hover:text-[#60A5FA]:transition-all:ease-in-out delay-150 " />
@@ -72,7 +72,7 @@ function Navbar() {
           className="relative text-[26px] font-extrabold"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <FaBug className="navbar-item-icon hover:text-[#60A5FA] transition-all ease-in-out delay-150 dark:text-white dark:hover:text-[#60A5FA]" />
+          <FaBug className="navbar-item-icon cursor-pointer hover:text-[#60A5FA] transition-all ease-in-out delay-150 dark:text-white dark:hover:text-[#60A5FA]" />
 
           {/* <span className="navbar-item-badge" >{allErrors}</span> */}
           {isOpen && (
@@ -88,12 +88,12 @@ function Navbar() {
               className="exit text-3xl font-extrabold"
               onClick={() => logout()}
             >
-              <FiLogOut className="navbar-item-icon dark:hover:text-[#60A5FA] hover:text-[#60A5FA] transition-all ease-in-out delay-150 dark:text-white" />
+              <FiLogOut className="navbar-item-icon cursor-pointer dark:hover:text-[#60A5FA] hover:text-[#60A5FA] transition-all ease-in-out delay-150 dark:text-white" />
             </span>
           ) : (
             <Link to="/login">
               <span className="login">
-                <FiLogIn className="navbar-item-icon dark:hover:text-[#60A5FA] hover:text-[#60A5FA] transition-all ease-in-out delay-150" />
+                <FiLogIn className="navbar-item-icon cursor-pointer dark:hover:text-[#60A5FA] hover:text-[#60A5FA] transition-all ease-in-out delay-150" />
               </span>
             </Link>
           )}
